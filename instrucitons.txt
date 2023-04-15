@@ -1,0 +1,15 @@
+connection related：
+   "@":connection success
+   "$":connection loss
+
+easy debug instructions:  instruction length=1+1+1+4=7
+    format:"E+X+Y+abcd"
+
+    'E':Easy debugmode
+    'X':object ID  eg: a:base wheel   b:serve motor   c:left brushless motor  d:right brushless motor
+    'Y':aux instruction" eg: for basewheel 'v' means speedcontrol  'p' means powercontrol 
+    abcd: type：float IEEE  (4 bytes)
+    egs: 1.'E'+'a'+'p'+string(-15.34) mean: drive basewheel with power -15.34
+         2.'E'+'a'+'v'+string(30.24)  mean: control basewheel with speed 30.24
+
+
